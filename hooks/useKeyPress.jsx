@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-export default function useKeyPress() {
+export default function useKeyPress(key) {
   const [isPressed, setIsPressed] = useState(false);
 
   useEffect(() => {
-    const handlePress = () => setIsPressed(true);
-    const handleLeft = () => setIsPressed(false);
+    const handlePress = (e) => e.key === key && setIsPressed(true);
+    const handleLeft = (e) => e.key === key && setIsPressed(false);
 
     document.addEventListener("keydown", handlePress);
     document.addEventListener("keyup", handleLeft);

@@ -1,5 +1,14 @@
+import useSwitch from "../hooks/useSwitch";
+
 function App() {
-  return <h1>ciao</h1>;
+  const [isOn, toggle] = useSwitch();
+
+  return (
+    <div>
+      <h1>Il valore è: {isOn ? "ON" : "OFF"}</h1>
+      <button onClick={toggle}>Cambia Stato</button>
+    </div>
+  );
 }
 
 export default App;

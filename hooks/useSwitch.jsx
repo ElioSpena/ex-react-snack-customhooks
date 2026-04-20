@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function useSwitch(initialValue = false) {
+export default function useSwitch(initialValue = false) {
   const [isOn, setIsOn] = useState(initialValue);
 
   const toggle = () => {
@@ -9,5 +9,3 @@ function useSwitch(initialValue = false) {
 
   return [isOn, toggle];
 }
-
-export default useSwitch;
